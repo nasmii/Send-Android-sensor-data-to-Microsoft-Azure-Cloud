@@ -1,0 +1,4 @@
+#Wed Feb 21 16:29:34 IST 2018
+base.0=C\:\\MY_DRIVE\\VIRTUSA\\2018\\Techday\\IoTSensor_20\\IoTSensor_V20\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

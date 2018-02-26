@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'MyAndroidKey'
+            keyPassword 'nasmi_001'
+            storeFile file('C:/MY_DRIVE/VIRTUSA/2018/Techday/Key_Certificate/android.jks')
+            storePassword 'nasmi_001'
+        }
+        paidConfig {
+            keyAlias 'MyAndroidKey'
+            keyPassword 'nasmi_001'
+            storeFile file('C:/MY_DRIVE/VIRTUSA/2018/Techday/Key_Certificate/android.jks')
+            storePassword 'nasmi_001'
+        }
+        freeConfig {
+            keyAlias 'MyAndroidKey'
+            keyPassword 'nasmi_001'
+            storeFile file('C:/MY_DRIVE/VIRTUSA/2018/Techday/Key_Certificate/android.jks')
+            storePassword 'nasmi_001'
+        }
+    }
+    compileSdkVersion 27
+    buildToolsVersion '27.0.1'
+    defaultConfig {
+        applicationId "com.iothub.azure.microsoft.com.androidsample"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        signingConfig signingConfigs.config
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude "META-INF/MSFTSIG.SF"
+        exclude "META-INF/MSFTSIG.RSA"
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'thirdpartynotice.txt'
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    // app dependencies
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.0.1'
+    // testing dependencies
+    testCompile 'junit:junit:4.12'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Remote binary dependency
+    compile 'com.microsoft.azure.sdk.iot:iot-device-client:1.5.37'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.5'
+}
