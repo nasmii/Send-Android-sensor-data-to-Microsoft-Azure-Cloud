@@ -177,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
         } else {
             runOnUiThread(new Runnable() {
                 @Override
@@ -519,7 +520,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         try
                         {
-                            Thread.sleep(500);
+                            Thread.sleep(1000);
                         } catch (InterruptedException e)
                         {
                             e.printStackTrace();
@@ -600,7 +601,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             else {
-                connString = "HostName=TechDay.azure-devices.net;DeviceId=" + deviceId + ";SharedAccessKey=" + primaryKey;
+
+                //connString = "HostName=TechDay.azure-devices.net;DeviceId=" + deviceId + ";SharedAccessKey=" + primaryKey;
+                connString = "HostName=IoT-Hub-EIM-CMB.azure-devices.net;DeviceId=" + deviceId + ";SharedAccessKey=" + primaryKey;
                 System.out.println(connString);
                 try {
                     client = new DeviceClient(connString, protocol);

@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Tue Feb 27 17:58:21 IST 2018
+0.baseType=DIRECTORY
+0.base=C\:\\MY_DRIVE\\VIRTUSA\\2018\\Techday\\IoTSensor_20\\IoTSensor_V20\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.path=classes.dex
+0.set=DEX
+count=1
